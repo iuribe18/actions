@@ -4,7 +4,7 @@ Este repositorio contiene una colección de ejemplos, flujos de trabajo, plantil
 ## Resources
 GitLab CI/CD: Pipelines, CI/CD and DevOps for Beginners
 
-https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/?couponCode=OF83024E
+https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/
 
 GitHub Actions - The Complete Guide
 
