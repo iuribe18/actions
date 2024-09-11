@@ -4,11 +4,11 @@ Este repositorio contiene una colección de ejemplos, flujos de trabajo, plantil
 Este repositorio contiene una colección de ejemplos, flujos de trabajo, plantillas y mejores prácticas para implementar y gestionar GitHub Actions. Está diseñado para automatizar tareas comunes de CI/CD, pruebas y despliegues.
 
 ## Resources
-1. Course: GitLab CI/CD: Pipelines, CI/CD and DevOps for Beginners
+GitLab CI/CD: Pipelines, CI/CD and DevOps for Beginners
 
 https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/?couponCode=OF83024E
 
-2. GitHub Actions - The Complete Guide
+GitHub Actions - The Complete Guide
 
 https://www.udemy.com/course/github-actions-the-complete-guide/
 
@@ -20,8 +20,8 @@ Integraciones: Configuración para integraciones con otros servicios y herramien
 Ejemplos de Automatización: Scripts y configuraciones para automatizar tareas repetitivas en los repositorios.
 
 ## Proyectos Incluidos
-- [Java Project](cars-api): Proyecto Java con su propio pipeline de GitHub Actions.
-- [Node.js Project](nodejs-project): Proyecto Node.js con su propio pipeline de GitHub Actions.
+- [Java API Project](cars-api): Proyecto Java con su propio pipeline de GitHub Actions.
+- [React Project](React): Proyecto React con su propio pipeline de GitHub Actions.
 - [Python Project](python-project): Proyecto Python con su propio pipeline de GitHub Actions.
 
 ## Cómo Trabajar con Submódulos
@@ -33,13 +33,13 @@ Ejemplos de Automatización: Scripts y configuraciones para automatizar tareas r
 Cada submódulo es un repositorio independiente. Puedes navegar a cada proyecto y trabajar en él de forma normal.
 
 # Resources
-1. github-actions-course-resources: https://github.com/academind/github-actions-course-resources
+github-actions-course-resources: https://github.com/academind/github-actions-course-resources
 
-2. GitHub Actions Documentation: https://docs.github.com/es/actions
+GitHub Actions Documentation: https://docs.github.com/es/actions
 
-3. Utilizar los ejecutores hospedados en GitHub: https://docs.github.com/es/actions/using-github-hosted-runners/using-github-hosted-runners
+Utilizar los ejecutores hospedados en GitHub: https://docs.github.com/es/actions/using-github-hosted-runners/using-github-hosted-runners
 
-4. Marketplace: https://github.com/marketplace?type=actions
+Marketplace: https://github.com/marketplace?type=actions
 
 ## Key Elements
 **Workflows**: es el archivo YAML que define un proceso automatizado que se ejecuta en un evento específico dentro de un repositorio de GitHub. Los workflows se encuentran en la carpeta 
