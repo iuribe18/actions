@@ -33,21 +33,16 @@ Ejemplos de Automatización: Scripts y configuraciones para automatizar tareas r
 Cada submódulo es un repositorio independiente. Puedes navegar a cada proyecto y trabajar en él de forma normal.
 
 # Resources
-1. github-actions-course-resources
+1. github-actions-course-resources: https://github.com/academind/github-actions-course-resources
 
-https://github.com/academind/github-actions-course-resources
+2. GitHub Actions Documentation: https://docs.github.com/es/actions
 
-2. GitHub Actions Documentation
-https://docs.github.com/es/actions
+3. Utilizar los ejecutores hospedados en GitHub: https://docs.github.com/es/actions/using-github-hosted-runners/using-github-hosted-runners
 
-3. Utilizar los ejecutores hospedados en GitHub
-https://docs.github.com/es/actions/using-github-hosted-runners/using-github-hosted-runners
-
-4. Marketplace
-https://github.com/marketplace?type=actions
+4. Marketplace: https://github.com/marketplace?type=actions
 
 ## Key Elements
-1. Workflows: es el archivo YAML que define un proceso automatizado que se ejecuta en un evento específico dentro de un repositorio de GitHub. Los workflows se encuentran en la carpeta 
+**Workflows**: es el archivo YAML que define un proceso automatizado que se ejecuta en un evento específico dentro de un repositorio de GitHub. Los workflows se encuentran en la carpeta 
 .github/workflows/ de tu repositorio.
 
 Archivo de Workflow: Es un archivo .yml o .yaml en el que defines uno o más jobs que deben ejecutarse en respuesta a un evento.
@@ -74,7 +69,7 @@ jobs:
         run: echo "Hello, world!"
 ```
 
-2. Jobs: es un conjunto de steps que se ejecutan en el mismo entorno. Cada job se ejecuta de manera aislada en una máquina virtual (runner) y, de manera predeterminada, los jobs se ejecutan en paralelo.
+**Jobs**: es un conjunto de steps que se ejecutan en el mismo entorno. Cada job se ejecuta de manera aislada en una máquina virtual (runner) y, de manera predeterminada, los jobs se ejecutan en paralelo.
 
 Definición: Un job está definido dentro de un workflow bajo la clave jobs.
 Runner: Cada job se ejecuta en un runner, que puede ser un entorno proporcionado por GitHub (como ubuntu-latest, windows-latest, etc.) o un runner auto-hospedado.
@@ -99,13 +94,11 @@ jobs:
       - name: Run tests
         run: echo "Running tests..."
 ```
+En el ejemplo anterior: build y test son dos jobs.
 
-En el ejemplo anterior:
+**NOTA**: test depende de que build se complete antes de ejecutarse.
 
-build y test son dos jobs.
-test depende de que build se complete antes de ejecutarse.
-
-3. Steps: Un step es una tarea individual que se ejecuta como parte de un job. Un step puede ejecutar un comando o una acción de GitHub que es una aplicación reutilizable.
+**Steps**: Un step es una tarea individual que se ejecuta como parte de un job. Un step puede ejecutar un comando o una acción de GitHub que es una aplicación reutilizable.
 Definición: Los steps se definen dentro de un job bajo la clave steps.
 Acciones de GitHub (uses): Puedes usar acciones de GitHub predefinidas o crear las tuyas propias.
 Comandos (run): Puedes ejecutar comandos de shell directamente en un step.
@@ -127,7 +120,5 @@ steps:
   - name: Run tests
     run: npm test  # Comando de shell para ejecutar pruebas
 ```
-En el ejemplo anterior:
-
-Cada - name: define un step dentro del job.
+En el ejemplo anterior: Cada **- name:** define un step dentro del job.
 Se utilizan tanto acciones de GitHub (uses) como comandos de shell (run).
