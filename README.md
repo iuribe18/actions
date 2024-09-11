@@ -2,9 +2,9 @@
 Este repositorio contiene una colección de ejemplos, flujos de trabajo, plantillas y mejores prácticas para implementar y gestionar GitHub Actions. Está diseñado para automatizar tareas comunes de CI/CD, pruebas y despliegues.
 
 ## Resources
-GitLab CI/CD: Pipelines, CI/CD and DevOps for Beginners
+Git GitHub Actions, Buenas Prácticas de Integración Continua
 
-https://www.udemy.com/course/gitlab-ci-pipelines-ci-cd-and-devops-for-beginners/
+https://www.udemy.com/course/git-github-actions-buenas-practicas-de-integracion-continua/
 
 GitHub Actions - The Complete Guide
 
