@@ -37,6 +37,10 @@ GitHub Actions Documentation: https://docs.github.com/es/actions
 
 Utilizar los ejecutores hospedados en GitHub: https://docs.github.com/es/actions/using-github-hosted-runners/using-github-hosted-runners
 
+Acceso a información contextual sobre ejecuciones de flujo de trabajo: https://docs.github.com/es/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs
+
+Evaluación de expresiones en flujos de trabajo y acciones: https://docs.github.com/es/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions
+
 Marketplace: https://github.com/marketplace?type=actions
 
 ## Key Elements
@@ -74,6 +78,8 @@ Runner: Cada job se ejecuta en un runner, que puede ser un entorno proporcionado
 Dependencias: Puedes establecer dependencias entre jobs para que se ejecuten en secuencia utilizando la clave needs.
 Ejemplo de Jobs en un Workflow:
 ```bash
+name: Deploy Project
+on: [push, workflow_dispath] # Multiple triggers
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -85,7 +91,8 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: build  # Este job depende del job 'build'
+    needs: build  # Este job se ejecuta si build se ejecuta de manera satisfactoria (Secuencial)
+    # needs: [build, deploy]  # Es posible limitar a varios jobs
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
