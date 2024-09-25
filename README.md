@@ -43,6 +43,8 @@ Evaluación de expresiones en flujos de trabajo y acciones: https://docs.github.
 
 Marketplace: https://github.com/marketplace?type=actions
 
+Eventos que desencadenan flujos de trabajo: https://docs.github.com/es/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+
 ## Key Elements
 **Workflows**: es el archivo YAML que define un proceso automatizado que se ejecuta en un evento específico dentro de un repositorio de GitHub. Los workflows se encuentran en la carpeta 
 .github/workflows/ de tu repositorio.
@@ -127,3 +129,32 @@ steps:
 ```
 En el ejemplo anterior: Cada **- name:** define un step dentro del job.
 Se utilizan tanto acciones de GitHub (uses) como comandos de shell (run).
+
+
+## Notas
+on:
+  pull_request:
+    types:
+      - opened
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - dev
+      - 'feat/**' # All branches that start with feat
+    paths-ignore:
+      - '.github/workflows/*' # 
+
+* El workflow se activará para eventos push en los branches main, dev y aquellos que comiencen con feat/.
+* Sin embargo, si el cambio que ocurre en esos branches solo afecta archivos dentro de .github/workflows/* (es decir, archivos de configuración de workflows de GitHub), no se disparará el workflow, ya que esas rutas están excluidas.
+* Este comportamiento es útil para evitar la ejecución innecesaria del workflow cuando solo se modifican archivos de configuración del propio workflow, lo que podría no afectar directamente el código de la aplicación.
+
+# Skipping workflow runs
+You can skip workflow runs triggered by the push and pull_request events by including a command in your commit message.
+Workflows that would otherwise be triggered using on: push or on: pull_request won't be triggered if you add any of the following strings to the commit message in a push, or the HEAD commit of a pull request:
+[skip ci]
+[ci skip]
+[no ci]
+[skip actions]
+[actions skip]
+https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs
