@@ -20,7 +20,12 @@ Ejemplos de Automatización: Scripts y configuraciones para automatizar tareas r
 ## Proyectos Incluidos
 - [Java API Project](cars-api): Proyecto Java con su propio pipeline de GitHub Actions.
 - [React Project](React): Proyecto React con su propio pipeline de GitHub Actions.
-- [Python Project](python-project): Proyecto Python con su propio pipeline de GitHub Actions.
+- [Node-Express](node): API Rest construida en Node y Express con su propio pipeline de GitHub Actions.
+
+## Adicionar un Repo (Submódulos)
+
+1. Adicionar el repositorio (node): `git submodule add git@github.com:iuribe18/node.git`
+[Node-Express](Resources/submodules.png)
 
 ## Cómo Trabajar con Submódulos
 
@@ -44,6 +49,8 @@ Evaluación de expresiones en flujos de trabajo y acciones: https://docs.github.
 Marketplace: https://github.com/marketplace?type=actions
 
 Eventos que desencadenan flujos de trabajo: https://docs.github.com/es/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows
+
+Store information in variables: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables
 
 ## Key Elements
 **Workflows**: es el archivo YAML que define un proceso automatizado que se ejecuta en un evento específico dentro de un repositorio de GitHub. Los workflows se encuentran en la carpeta 
