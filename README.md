@@ -165,3 +165,27 @@ Workflows that would otherwise be triggered using on: push or on: pull_request w
 [skip actions]
 [actions skip]
 https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/skipping-workflow-runs
+
+# Ejecución de variaciones de trabajos en un flujo de trabajo
+Crea una matriz a fin de definir variaciones para cada trabajo.
+Una estrategia de matriz permite usar variables en una definición de trabajo para crear automáticamente varias ejecuciones de trabajos basadas en las combinaciones de las variables. Por ejemplo, puedes usar una estrategia de matriz para probar el código en varias versiones de un lenguaje o en varios sistemas operativos.
+
+```bash
+jobs:
+  example_matrix:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest, windows-latest]
+```
+
+Se ejecutará un trabajo para cada combinación posible de las variables. En este ejemplo, el flujo de trabajo ejecutará seis trabajos, uno por cada combinación de las variables os y version.
+
+De forma predeterminada, GitHub maximizará el número de trabajos ejecutados en paralelo en función de la disponibilidad del ejecutor. El orden de las variables de la matriz determina el orden en el que se crean los trabajos. La primera variable que definas será el primer trabajo que se cree en tu ejecución de flujo de trabajo. Por ejemplo, la matriz anterior creará los trabajos en el orden siguiente:
+
+{version: 10, os: ubuntu-latest}
+{version: 10, os: windows-latest}
+{version: 12, os: ubuntu-latest}
+{version: 12, os: windows-latest}
+{version: 14, os: ubuntu-latest}
+{version: 14, os: windows-latest}
